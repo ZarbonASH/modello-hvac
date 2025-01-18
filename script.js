@@ -12,7 +12,7 @@ scene.add(light);
 // Carica il modello GLTF/GLB
 const loader = new THREE.GLTFLoader();
 loader.load(
-  'hvac_unit', 
+  'hvac_unit.glb', 
   function (gltf) {
     scene.add(gltf.scene);
     camera.position.z = 5;
