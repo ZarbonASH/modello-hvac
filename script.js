@@ -8,14 +8,17 @@ document.body.appendChild(renderer.domElement);
 // Aggiungi una luce
 const light = new THREE.AmbientLight(0xffffff, 1);
 scene.add(light);
-
+// Aggiungi una luce direzionale
+const directionalLight = new THREE.DirectionalLight(0xffffff, 1);
+directionalLight.position.set(5, 5, 5); // Posizione della luce
+scene.add(directionalLight);
 // Carica il modello GLTF/GLB
 const loader = new THREE.GLTFLoader();
 loader.load(
   'hvac_unit.glb', 
   function (gltf) {
     scene.add(gltf.scene);
-    camera.position.z = 5;
+    camera.position.z = 3;
   },
   undefined,
   function (error) {
